@@ -19,7 +19,7 @@ Secondly we dealt with a unsupervised clustering problem. We used the pretrained
 
 In the end, we select Kmeans algorithm both in terms of inertia and weighted inertia.
 
-# Thank you Michele Di Sabato and Simone Colombara for teaching me so many things about neural networks in just one day!
+Thank you Michele Di Sabato and Simone Colombara for teaching me so many things about neural networks in just one day!
 
 
 
