@@ -7,9 +7,9 @@ Machine learning models are developed for identifying 3D printing defects during
 
 We tried to developed a neural network to recognize these patterns starting from a collection of images containing anomalies or not.
 
-Firstly we dealt with a binary classification problem. We noticed that the anomalies are not easily detectable by human eye, so we decided to use a black box model. In particular we chose to train a CONVOLUTIONAL NEURAL NETWORK fine tuning the convolutional part of the INCEPTIONV3 network and adding a fully connected dense layer with 128 neurons. As loss function we used categorical crossentropy, while we relied on the "Adam" optimizer in order to reduce automatically the learning rate during training.
+Firstly we dealt with a binary classification problem. We noticed that the anomalies are not easily detectable by human eye, so we decided to use a black box model. In particular we chose to train a **convolutional neural networks** fine tuning the convolutional part of the **InceptionV3** network and adding a fully connected dense layer with 128 neurons. As loss function we used categorical crossentropy, while we relied on the "Adam" optimizer in order to reduce automatically the learning rate during training.
 
-Secondly we dealt with a unsupervised clustering problem. We used the pretrained Convolutional Neural Network (InceptionV3) to get the latent representation of each image. We keep every layer of InceptionV3, except for the output layer. The latent representation is therefore a vector with 2048 components. Dealing with 2048 components is very computationally expensive, therefore through SVD decomposition we compute the 452 Principal Components. Compute the explained variance: we found out that the first 50 principal components explained more than 90% of the variability of the dataset composed of the latent representations and we applied three different unsupervised clustering algorithms, comparing their performances through the inertia metric:
+Secondly we dealt with a unsupervised clustering problem. We used the pretrained Convolutional Neural Network (InceptionV3) to get the latent representation of each image. We keep every layer of InceptionV3, except for the output layer. The latent representation is therefore a vector with 2048 components. Dealing with 2048 components is very computationally expensive, therefore through SVD decomposition we compute the 452 Principal Components. Compute the explained variance: we found out that the first 50 principal components explained more than 90% of the variability of the dataset composed of the latent representations and we applied three different **unsupervised clustering algorithms**, comparing their performances through the inertia metric:
 
 •	Kmeans (k = 3): we used 100 initial starting points, thus averaging on the response of each model out of the 100 (bagging). The inertia reached was: 225.68323.
 
@@ -19,7 +19,7 @@ Secondly we dealt with a unsupervised clustering problem. We used the pretrained
 
 In the end, we select Kmeans algorithm both in terms of inertia and weighted inertia.
 
-Thank you Michele Di Sabato and Simone Colombara for teaching me so many things about neural networks in just one day!
+**Thank you Michele Di Sabato and Simone Colombara for teaching me so many things about neural networks in just one day!**
 
 
 
